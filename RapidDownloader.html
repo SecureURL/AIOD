@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapid Downloader</title>
+    <link rel="stylesheet" href="https://urltank.github.io/CDN/KalkiStyle.css">
+    <link rel="stylesheet" href="RDstyle.css">
+</head>
+<body>
+    <!--Header Menu-->
+    <header class="flx jusCentre">
+        <div class="container flx">
+            <div class="part1-4 logo midCentre">
+                <img src="imgs/Logo.png" alt="" srcset="">
+            </div>
+
+            <div class="ads part4-1 midCentre">
+                <p class="midCentre sqRounded">Ads Placeholder</p>
+            </div>
+        </div>
+    </header>
+    <!--Download Button and Content Section-->
+    <section class="downloader flx jusCentre">
+        <div class="container flx">
+            <div class="flx flxTopDown midCentre">
+                <div class="ads sq336-280 sqRounded midCentre">
+                    <p class="midCentre sqRounded">Ads Placeholder</p>
+                </div>
+                <div class="ads sq336-280 sqRounded midCentre">
+                    <p class="midCentre sqRounded">Ads Placeholder</p>
+                </div>
+            </div>
+            
+            <div class="Holder part4-1 flx flxTopDown">
+                <div class="expireMsg midCentre fullHeight" style="display: none;">
+                    <span class="holder midCentre flxTopDown fullHeight">
+                        <img src="https://cdn-icons-png.flaticon.com/512/63/63422.png" height="100px" alt="">
+                        <h2>The link you are trying to access is expired.</h2>
+                        <h4>Kindly visit the site which redirected you here and generate the link one again.</h4>
+                    </span>
+                </div>
+                <div class="FileDownloader unlocker midCentre">
+                    <span class="FileDetails flx jusCentre sqRounded algnCentre">
+                        <span class="BtnHolder part1-2 midCentre flxTopDown fullHeight">
+                            <button id="waitBtn" class="linkBtn sqRounded">Click here to prove you are not a robot.</button>
+                        </span>
+                    </span>
+                </div>
+
+                <span class="downloadGif midCentre" style="display: none;">
+                    <a href="#dld">
+                        <img src="Download img.gif" height="100px" alt="">
+                    </a>
+                </span>
+                <div class="FileDescription midCentre sqRounded">
+                    <div class="descript flx sqRounded">
+                        <!--Left-->
+                        <div class="part4-1 left flxTopDown">
+                            <div class="part4-1">
+                                <span class="flx info algnCentre">
+                                    <img class="icon" src="imgs/link.png" alt="">
+                                    <span class="flx flxTopDown">
+                                        <p id="flName">Real Slim Shady File Name.mp4</p>
+                                        <h5>Video (.MP4)</h5>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="content">
+                                <h3>About the Video Format</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ab, maiores soluta culpa ducimus doloribus suscipit impedit esse laboriosam consequuntur deleniti qui, expedita eius neque. Dolorem aspernatur, maxime doloremque aut sequi dolore fugiat error sit consequatur aliquam sunt odio. Incidunt?</p>
+                            </div>
+                        </div>
+                        <!--Right-->
+                        <div class="part1-4 right flxTopDown">
+                            <span class="infoBox sqRounded">
+                                <h6>This File Can be opened with</h6>
+                                <span class="flx algnCentre">
+                                    <img class="icon" src="imgs/link.png" alt="">
+                                    <p>MX Player</p>
+                                </span>
+                            </span>
+
+                            <span class="infoBox sqRounded">
+                                <h6>File Intended for</h6>
+                                <span class="flx algnCentre">
+                                    <img class="icon" src="imgs/pc.png" alt="">
+                                    <p>Android/IOS</p>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div id="dld" class="FileDownloader midCentre" style="display: none;">
+                    <span class="FileDetails flx jusSpBet sqRounded algnCentre">
+                        <span class="part1-4 jusSpEve fileType flx algnCentre">
+                            <img class="icon" src="imgs/link.png" alt="">
+                            <p>File Name</p>
+                        </span>
+
+                        <span class="BtnHolder part1-2 midCentre fullHeight">
+                            <button id="dnload" class="linkBtn sqRounded">Click to Start Download</button>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Promotions and Ads-->
+    <section class="promo midCentre">
+        <div class="container flx algnCentre flxTopDown">
+            <h1>Promoted content and Offers </h1>
+            <div class="Promos flx midCentre flxWrp">
+                <a class="post flx sqRounded algnCentre">
+                    <img src="https://scontent.fccu27-1.fna.fbcdn.net/v/t1.6435-9/180978949_314228950059549_1005358403722529104_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=yw6MwRQlRPwAX9wqEmn&_nc_ht=scontent.fccu27-1.fna&oh=00_AT8MGQ-U2EOiRAWwf9DA24CIpczGrF46HIzr1TXRBrtFEA&oe=632E590E" alt="">
+                    <p>Title Lorem ipsum.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--Footer-->
+    <script src="Data.js"></script>
+    <script>
+
+        //getting values of Parameter
+        let urlString = window.location.href, srno="", code="",redirect="";
+        var link = new URL(urlString);
+
+        srno = link.searchParams.get("sr");
+        code = link.searchParams.get("code");
+        
+        //OnLoad validate the received parameters
+        function UnlockLink(){
+            for(i =0;i< links.length;i++)
+            {
+                if(srno === links[i].sr && code === links[i].code)
+                {
+                    //LoadLinkandData()
+                    document.getElementById("flName").textContent = links[i].fileName + "." + links[i].type;
+                    redirect = links[i].url;
+                    linkFound();
+                    break;
+                }
+                else
+                {
+                    linkExpireMsg();
+                }
+            }
+        }
+
+        UnlockLink();
+        //Destroying the link and fetched data
+        function forceExpireLink(){
+            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname ;
+            window.history.pushState({path:newurl},'Rapid Downloader Visited',newurl);
+            
+        }
+        forceExpireLink();
+
+        function linkExpireMsg(){
+            document.querySelectorAll(".FileDownloader")[0].style.display = "none";
+            document.querySelectorAll(".FileDownloader")[1].style.display = "none";
+            document.querySelector(".FileDescription").style.display = "none";
+            document.querySelector(".expireMsg").style.display = "flex";
+        }
+        function linkFound(){
+            document.querySelectorAll(".FileDownloader")[0].style.display = "flex";
+            document.querySelector(".FileDescription").style.display = "flex";
+            document.querySelector(".expireMsg").style.display = "none";
+        }
+        
+        
+        //Timer for Unlocking the Link
+        document.getElementById('waitBtn').addEventListener("click" , function(){
+            var sec = 2;
+            myInterval = setInterval(function() {
+                sec--;
+                document.getElementById("waitBtn").innerHTML = "Unlocking link in " + sec + " Second(s)";
+                if (sec == 00) {
+                    document.getElementById("waitBtn").innerHTML = "Link Unlocked. Scroll down";
+                    document.querySelectorAll(".FileDownloader")[1].style.display = "flex";
+                    document.querySelector(".downloadGif").style.display = "flex";
+                    clearInterval(myInterval);
+                }
+            }, 1000);
+        })
+
+        document.querySelector("#dnload").addEventListener("click" , function(){
+            window.open(redirect, '_blank');
+        })
+    </script>
+</body>
+</html>
+
+<!--
+    Array of Links
+    10/15 Second timer Unlocker
+    Unlocker Validator
+-->
